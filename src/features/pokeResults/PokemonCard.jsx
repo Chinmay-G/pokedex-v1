@@ -20,10 +20,10 @@ function PokemonCard({ pokemon }) {
   if (!pokeDataRef?.current) return "LOADING...";
 
   return (
-    <div className="min-w-20 min-h-20 border">
+    <div className="w-35 min-h-20 border flex text-center flex-col items-center">
       <img src={pokeDataRef.current.image} alt={pokeDataRef.current.name} />
-      <p>{pokeDataRef.current.id}</p>
-      <h4 className="capitalize">{pokeDataRef.current.name}</h4>
+      <p>#{pokeDataRef.current.id}</p>
+      <p className="uppercase font-semibold">{pokeDataRef.current.name}</p>
     </div>
   );
 }

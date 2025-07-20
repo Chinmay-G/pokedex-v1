@@ -11,7 +11,8 @@ function Search() {
 
   //   Filter the pokemon with search query (name or id) and set the pokemons results state
   useEffect(() => {
-    if (query.length <= 3 && !(typeof Number(query) === "number")) return;
+    // if (query.length <= 3 && !(typeof Number(query) === "number")) return;
+    if (query.length <= 3) return;
 
     if (!allPokeNames?.length) return;
 

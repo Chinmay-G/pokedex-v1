@@ -18,7 +18,8 @@ function Search() {
 
     const filteredPokemons = allPokeNames.filter(
       (poke, i) =>
-        (isNaN(query) && poke.name.toLowerCase().includes(query)) ||
+        (isNaN(query) &&
+          poke.name.toLowerCase().includes(query.toLowerCase())) ||
         i === Number(query) - 1,
     );
 
@@ -27,12 +28,6 @@ function Search() {
 
   return (
     <div>
-      {/* TEST CODE */}
-      <h3>
-        {allPokeNames
-          ?.filter((poke) => poke.name.toLowerCase().includes(query))
-          .map((e) => e.name)}
-      </h3>
       <input
         type="text"
         name="search"

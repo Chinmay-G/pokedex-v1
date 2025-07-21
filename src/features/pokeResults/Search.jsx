@@ -27,7 +27,7 @@ function Search() {
 
   return (
     <div>
-      <h3>{query}</h3>
+      <h3>{typeof query}</h3>
       <input
         type="text"
         name="search"

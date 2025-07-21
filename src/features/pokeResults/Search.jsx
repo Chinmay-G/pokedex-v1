@@ -23,10 +23,16 @@ function Search() {
     );
 
     dispatch(setPokemons(filteredPokemons));
-  }, [query, allPokeNames]);
+  }, [query, allPokeNames, dispatch]);
 
   return (
     <div>
+      {/* TEST CODE */}
+      <h3>
+        {allPokeNames
+          ?.filter((poke) => poke.name.toLowerCase().includes(query))
+          .map((e) => e.name)}
+      </h3>
       <input
         type="text"
         name="search"

@@ -27,7 +27,6 @@ function Search() {
 
   return (
     <div>
-      <h3>{isNaN(query) ? "TRUE" : "FALSE"}</h3>
       <input
         type="text"
         name="search"

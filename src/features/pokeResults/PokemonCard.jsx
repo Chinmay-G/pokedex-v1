@@ -6,7 +6,7 @@ function PokemonCard({ pokemon }) {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
 
-  console.log(pokemon);
+  // console.log(pokemon);
 
   useEffect(() => {
     const controller = new AbortController();

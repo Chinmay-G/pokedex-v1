@@ -23,7 +23,7 @@ function Search() {
     );
 
     dispatch(setPokemons(filteredPokemons));
-  }, [query, allPokeNames, dispatch]);
+  }, [query, allPokeNames]);
 
   return (
     <div>

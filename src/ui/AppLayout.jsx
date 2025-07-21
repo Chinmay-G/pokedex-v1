@@ -6,7 +6,7 @@ function AppLayout() {
   const isLoading = navigation.state === "loading";
 
   return (
-    <div className="bg-red-500 p-4 absolute inset-0 sm:p-8 md:px-14">
+    <div className="bg-red-500 p-4 absolute inset-0 sm:inline-block sm:h-fit sm:p-8 md:px-14">
       <Header />
       {isLoading && <p>LOADING...</p>}
       <Outlet />

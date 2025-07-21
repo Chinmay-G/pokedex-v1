@@ -11,19 +11,19 @@ function Search() {
 
   //   Filter the pokemon with search query (name or id) and set the pokemons results state
   useEffect(() => {
-    // if (query.length <= 3 && !(typeof Number(query) === "number")) return;
-    if (query.length <= 3) return;
+    if ((query.length < 3 && isNaN(query)) || !query.length) return;
+    // if (query.length < 3) return;
 
     if (!allPokeNames?.length) return;
 
     const filteredPokemons = allPokeNames.filter(
       (poke, i) =>
-        JSON.stringify(i).includes(query) ||
-        poke.name.toLowerCase().includes(query)
+        i === Number(query) - 1 ||
+        (isNaN(query) && poke.name.toLowerCase().includes(query)),
     );
 
     dispatch(setPokemons(filteredPokemons));
-  }, [query, allPokeNames]);
+  }, [query, allPokeNames, dispatch]);
 
   return (
     <div>
@@ -33,7 +33,7 @@ function Search() {
         value={query}
         placeholder="Search by Pokemon Name / ID"
         onChange={(e) => setQuery(e.target.value)}
-        className="bg-red-50 my-3 mx-auto w-full py-1 px-2 text-sm text-yellow-900 focus:outline-none rounded-full sm:py-3 sm:px-6 sm:text-base sm:my-6"
+        className="mx-auto my-3 w-full rounded-full bg-red-50 px-2 py-1 text-sm text-yellow-900 focus:outline-none sm:my-6 sm:px-6 sm:py-3 sm:text-base"
       />
     </div>
   );

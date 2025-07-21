@@ -3,7 +3,7 @@ import Search from "./Search";
 
 function Home() {
   return (
-    <div className="h-[80vh] grid grid-rows-[auto_1fr] p-2">
+    <div className="grid h-[85vh] grid-rows-[auto_1fr] p-2 sm:h-[90vh]">
       <Search />
       <PokemonsContainer />
     </div>
